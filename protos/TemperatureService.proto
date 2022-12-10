@@ -13,10 +13,10 @@ service TemperatureService {
   rpc CreateTemperature (TemperatureData) returns (StatusReply) {}
 
   // Get Temperature by Date
-  rpc GetTemperatureByDate (TemperatureDate) returns (TemperatureData) {}
+  rpc GetTemperatureByDate (TemperatureDate) returns (TemperatureDataList) {}
 
   // Get Temperature by Location
-  rpc GetTemperatureByLocation (TemperatureLocation) returns (TemperatureData) {}
+  rpc GetTemperatureByLocation (TemperatureLocation) returns (TemperatureDataList) {}
 
   // List all temperature
   rpc ListAllTemperatures (EmptyMessage) returns (TemperatureDataList) {}
