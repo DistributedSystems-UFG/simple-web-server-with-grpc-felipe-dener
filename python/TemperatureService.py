@@ -30,15 +30,20 @@ class TemperatureServer(TemperatureService_pb2_grpc.TemperatureServiceServicer):
     return TemperatureService_pb2.StatusReply(status='OK')
 
   def GetTemperatureByDate(self, request, context):
+    list =  = TemperatureService_pb2.TemperatureDataList()
     for temp in tempDB:
       if temp['date'] == request.date:
-        return TemperatureService_pb2.TemperatureData(date=temp['date'], location=temp['location'], temperature=temp['temperature'])
+        temp_data = TemperatureService_pb2.TemperatureData(date=temp['date'], location=temp['location'], temperature=temp['temperature'])
+        list.temperature_data.append(temp_data)
+    return list
 
   def GetTemperatureByLocation(self, request, context):
     for temp in tempDB:
       if temp['location'] == request.location:
-        return TemperatureService_pb2.TemperatureData(date=temp['date'], location=temp['location'], temperature=temp['temperature'])
-
+        temp_data = TemperatureService_pb2.TemperatureData(date=temp['date'], location=temp['location'], temperature=temp['temperature'])
+        list.temperature_data.append(temp_data)
+    return list
+    
   def ListAllTemperatures(self, request, context):
     list = TemperatureService_pb2.TemperatureDataList()
     for item in tempDB:
