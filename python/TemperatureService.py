@@ -46,8 +46,8 @@ class TemperatureServer(TemperatureService_pb2_grpc.TemperatureServiceServicer):
     
   def ListAllTemperatures(self, request, context):
     list = TemperatureService_pb2.TemperatureDataList()
-    for item in tempDB:
-      temp_data = TemperatureService_pb2.TemperatureData(date=item['date'], location=item['location'], temperature=item['temperature']) 
+    for temp in tempDB:
+      temp_data = TemperatureService_pb2.TemperatureData(date=temp['date'], location=temp['location'], temperature=temp['temperature']) 
       list.temperature_data.append(temp_data)
     return list
 
