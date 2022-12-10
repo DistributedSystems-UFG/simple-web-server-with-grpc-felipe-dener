@@ -13,12 +13,14 @@ def run():
 
         # Query Temperature by Date
         response = stub.GetTemperatureByDate(TemperatureService_pb2.TemperatureDate(date='25-02-2022'))
-        print ('Result of Query By Date:\n' + str(response) + '\n\n')
+        print ('Result of Query By Date:')
+        print ('%s : %s : %.2f \n\n' %(response.date, response.location, response.temperature))
 
         # Query Temperature by Location
         response = stub.GetTemperatureByLocation(TemperatureService_pb2.TemperatureLocation(location='Sao Paulo'))
-        print ('Restult of Query By Location:\n' + str(response) + '\n\n')
-
+        print ('Restult of Query By Location')
+        print ('%s : %s : %.2f \n\n' %(response.date, response.location, response.temperature))
+        
         # Add New Temperature
         response = stub.CreateTemperature(TemperatureService_pb2.TemperatureData(date='12-03-2022', location='Rio de Janeiro', temperature=29.3))
         print ('Added New Temperature ' + response.status + '\n\n')
@@ -26,6 +28,7 @@ def run():
         # List all Temperature
         response = stub.ListAllTemperatures(TemperatureService_pb2.EmptyMessage())
         print ('List All temperature:\n' + str(response) + '\n\n')
+        
 
 if __name__ == '__main__':
     logging.basicConfig()
