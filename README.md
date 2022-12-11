@@ -1,3 +1,9 @@
+## Link para apresentação da solução Multi Pub-Sub
+
+[Web Server gRPC](https://www.youtube.com/watch?v=VzY4sCyMS0Y)
+
+
+
 # gRPC-WS-Example
 This is the gRPC equivalent of the RESTful WS example, meant to illustrate the difference between generic interfaces (i.e., RESTful) and application-specific interfaces.
 
