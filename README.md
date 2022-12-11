@@ -1,4 +1,4 @@
-## Link para apresentação da solução Multi Pub-Sub
+## Link para apresentação da solução Web Server gRPC
 
 [Web Server gRPC](https://www.youtube.com/watch?v=VzY4sCyMS0Y)
 
