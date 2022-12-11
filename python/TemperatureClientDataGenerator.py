@@ -27,7 +27,7 @@ def run():
         stub = TemperatureService_pb2_grpc.TemperatureServiceStub(channel)
         for i in range(15):
             response = stub.CreateTemperature(TemperatureService_pb2.TemperatureData(
-                date=get_random_date(), location='goiania', temperature=rand_temperature))
+                date=get_random_date(), location='goiania', temperature=rand_temperature()))
             print('Added New Temperature ' + response.status + '\n\n')
 
 
