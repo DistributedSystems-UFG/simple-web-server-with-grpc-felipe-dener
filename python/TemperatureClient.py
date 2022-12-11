@@ -10,7 +10,7 @@ import const
 def run():
     with grpc.insecure_channel(const.IP+':'+const.PORT) as channel:
         print('services available: create, getByDate, getByLocation, listAll')
-        print('type break to exit or ctrl+c to interupt')
+        print('type break as service to exit or type ctrl+c to interupt')
         stub = TemperatureService_pb2_grpc.TemperatureServiceStub(channel)
         while True:
             service = input('choose a service: ')
