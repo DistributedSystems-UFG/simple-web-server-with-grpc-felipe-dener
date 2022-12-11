@@ -30,7 +30,7 @@ def run():
             print('date format: dd-mm-yyyy')
             date = input('date: ')
             location = input('location: ')
-            temp = input('temperature: ')
+            temp = float(input('temperature: '))
             response = stub.CreateTemperature(TemperatureService_pb2.TemperatureData(date=date, location=location, temperature=temp))
             print('Added New Temperature ' + response.status + '\n\n')
 
